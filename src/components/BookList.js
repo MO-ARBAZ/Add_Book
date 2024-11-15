@@ -10,7 +10,7 @@ function BookList() {
   useEffect(() => {
     // Fetch all books from the backend
     axios
-      .get("http://localhost:4000/api/books")
+      .get("https://backendfile-new.onrender.com/api/books")
       .then((response) => {
         setBooks(response.data);
       })
@@ -34,7 +34,7 @@ function BookList() {
   // Handle book deletion
   function handleDelete() {
     axios
-      .delete(`http://localhost:4000/api/books/${bookToDelete}`)
+      .delete(`https://backendfile-new.onrender.com/api/books/${bookToDelete}`)
       .then(() => {
         setBooks(books.filter((book) => book._id !== bookToDelete));
         closeModal(); // Close the modal after deletion
